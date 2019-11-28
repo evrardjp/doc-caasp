@@ -17,8 +17,8 @@ installed on the cluster. If the cluster is already running the latest available
 versions, the output should look like this:
 
 ----
-Current Kubernetes cluster version: 1.15.0
-Latest Kubernetes version: 1.15.0
+Current Kubernetes cluster version: {kube_version}
+Latest Kubernetes version: {kube_version}
 
 Congratulations! You are already at the latest version available
 ----
@@ -28,10 +28,12 @@ output should look like this:
 
 ----
 Current Kubernetes cluster version: 1.14.1
-Latest Kubernetes version: 1.15.0
-Upgrade path to update from 1.14.1 to 1.15.0:
+Latest Kubernetes version: {kube_version}
+Upgrade path to update from 1.14.1 to {kube_version}:
  - 1.14.1 -> 1.14.2
  - 1.14.2 -> 1.15.0
+ - 1.15.0 -> 1.15.2
+ - 1.15.2 -> 1.16.0
 ----
 
 Similarly, you can also fetch this information on a per-node basis with the following command:
@@ -43,8 +45,8 @@ skuba node upgrade plan <NODE>
 For example, if the cluster has a node named `worker0` which is running the latest available versions, the output should look like this:
 
 ----
-Current Kubernetes cluster version: 1.15.0
-Latest Kubernetes version: 1.15.0
+Current Kubernetes cluster version: {kube_version}
+Latest Kubernetes version: {kube_version}
 
 Node worker0 is up to date
 ----
@@ -53,11 +55,11 @@ On the other hand, if this same node has a new patch-level or minor {kube} versi
 
 ----
 Current Kubernetes cluster version: 1.14.1
-Latest Kubernetes version: 1.15.0
+Latest Kubernetes version: {kube_version}
 
 Component versions in worker0
-  - kubelet: 1.14.1 -> 1.15.0
-  - cri-o: 1.14.1 -> 1.15.0
+  - kubelet: 1.14.1 -> {kube_version}
+  - cri-o: 1.14.1 -> {kube_version}
 ----
 
 You will get a similar output if there is a version available on a master node
@@ -65,15 +67,15 @@ You will get a similar output if there is a version available on a master node
 
 ----
 Current Kubernetes cluster version: 1.14.1
-Latest Kubernetes version: 1.15.0
+Latest Kubernetes version: {kube_version}
 
 Component versions in master0
-  - apiserver: 1.14.1 -> 1.15.0
-  - controller-manager: 1.14.1 -> 1.15.0
-  - scheduler: 1.14.1 -> 1.15.0
-  - etcd: 3.3.11 -> 3.3.11
-  - kubelet: 1.14.1 -> 1.15.0
-  - cri-o: 1.14.1 -> 1.15.0
+  - apiserver: 1.14.1 -> {kube_version}
+  - controller-manager: 1.14.1 -> {kube_version}
+  - scheduler: 1.14.1 -> {kube_version}
+  - etcd: 3.3.11 -> {etcd_version}
+  - kubelet: 1.14.1 -> {kube_version}
+  - cri-o: 1.14.1 -> {kube_version}
 ----
 
 It may happen that the {kube} version on the control plane is too outdated
@@ -81,8 +83,8 @@ for the update to progress.
 In this case, you would get output similar to the following:
 
 ----
-Current Kubernetes cluster version: 1.15.0
-Latest Kubernetes version: 1.15.0
+Current Kubernetes cluster version: {kube_version}
+Latest Kubernetes version: {kube_version}
 
 Unable to plan node upgrade: at least one control plane does not tolerate the current cluster version
 ----
@@ -112,8 +114,8 @@ This will show you a list of updates (if available) for different addons
 installed on the cluster:
 
 ----
-Current Kubernetes cluster version: 1.15.2
-Latest Kubernetes version: 1.15.2
+Current Kubernetes cluster version: {kube_version}
+Latest Kubernetes version: {kube_version}
 
 Addon upgrades:
   - cilium: 1.5.3 -> 1.5.3 (manifest version from 0 to 4)
@@ -127,8 +129,8 @@ If the cluster is already running the latest available
 versions, the output should look like this:
 
 ----
-Current Kubernetes cluster version: 1.15.2
-Latest Kubernetes version: 1.15.2
+Current Kubernetes cluster version: {kube_version}
+Latest Kubernetes version: {kube_version}
 
 Congratulations! Addons are already at the latest version available
 ----
