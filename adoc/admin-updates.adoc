@@ -16,6 +16,7 @@ This will show you a list of updates (if available) for different components
 installed on the cluster. If the cluster is already running the latest available
 versions, the output should look like this:
 
+[subs="attributes+"]
 ----
 Current Kubernetes cluster version: {kube_version}
 Latest Kubernetes version: {kube_version}
@@ -26,18 +27,19 @@ Congratulations! You are already at the latest version available
 if the cluster only has a new patch-level or minor {kube} version available, the
 output should look like this:
 
+[subs="attributes+"]
 ----
-
 Current Kubernetes cluster version: {kube_previous_version}
 Latest Kubernetes version: {kube_version}
+
 Upgrade path to update from {kube_previous_version} to {kube_version}:
  - {kube_previous_version} -> {kube_version}
-
 ----
 
 If the cluster has a new patch-level and minor {kube} version available, the
 output should look like this:
 
+[subs="attributes+"]
 ----
 Current Kubernetes cluster version: 1.14.1
 Latest Kubernetes version: {kube_version}
@@ -58,6 +60,7 @@ skuba node upgrade plan <NODE>
 
 For example, if the cluster has a node named `worker0` which is running the latest available versions, the output should look like this:
 
+[subs="attributes+"]
 ----
 Current Kubernetes cluster version: {kube_version}
 Latest Kubernetes version: {kube_version}
@@ -67,6 +70,7 @@ Node worker0 is up to date
 
 On the other hand, if this same node has a new patch-level or minor {kube} version available, the output should look like this:
 
+[subs="attributes+"]
 ----
 Current Kubernetes cluster version: {kube_previous_version}
 Latest Kubernetes version: {kube_version}
@@ -79,6 +83,7 @@ Component versions in worker0
 You will get a similar output if there is a version available on a master node
 (named `master0` in this example):
 
+[subs="attributes+"]
 ----
 Current Kubernetes cluster version: {kube_previous_version}
 Latest Kubernetes version: {kube_version}
@@ -138,6 +143,7 @@ Addon upgrades:
 If the cluster is already running the latest available
 versions, the output should look like this:
 
+[subs="attributes+"]
 ----
 Current Kubernetes cluster version: {kube_version}
 Latest Kubernetes version: {kube_version}
